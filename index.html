@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>home work "Step"</title>
+</head>
+<body>
+   
+<div>
+    <input type="text" id="searchText" value="money">
+    <select id="typeFilm">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+    </select>
+    <br><br>
+    <button id="submitMe">Press here</button>
+</div>
+
+<br>
+<h1>Films:</h1>
+<div id="film">
+    
+</div>
+<div>
+    <div id="messageNotfound">Films not found!</div>
+    <div id="messageNotString">No text for searching!</div>
+</div>
+<div class="pagination">
+    <a class="pageMe">&laquo;</a>
+    <a class="pageMe" data-id="1">-1-</a>
+    <a class="pageMe" data-id="2">-2-</a>
+    <a class="pageMe" data-id="3">-3-</a>
+    <a class="pageMe" data-id="4">-4-</a>
+    <a class="pageMe" data-id="5">-5-</a>
+    <a class="pageMe" data-id="6">-6-</a>
+    <a class="pageMe">&raquo;</a>
+  </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="model1">Some text in the Modal..</p>
+    </div>
+  
+  </div>
+    </body>
+    <script src="script.js"></script>
+
+</html> 
