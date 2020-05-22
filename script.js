@@ -12,24 +12,30 @@
 
     let page = 1;
 
+    let cached = null
+    // window.addEventListener('scroll', event => {
+    //     if (!cached) {
+    //         setTimeout(() => {
+    //             console.warn(`It's scrolling THROTTLED! ${window.scrollY} ${window.scrollX}`)
+    //
+    //             cached = null
+    //         }, 1000)
+    //     }
+    //     cached = event
+    // })
 
+    window.addEventListener('scroll', function (e) {
 
-
-
-    window.addEventListener('scroll', function(e) {
-
-        console.log(document.documentElement.scrollTop , document.documentElement.clientHeight, document.documentElement.scrollHeight);
+        console.log("*", document.documentElement.scrollTop, document.documentElement.clientHeight, document.documentElement.scrollHeight);
         if (document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
 
-            console.log("******************************* УРА ***********************************************");
-
-            //console.log(e.target);
-                //makeAPIRequest();
             page++;
-            film.innerHTML += "<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page+"<p>&nbsp; *** " + page;
+            let elChild = document.createElement('div');
+            elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+            film.appendChild(elChild);
 
+            //film.innerHTML +=  "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
 
-            // User has scrolled to the bottom of the element
         }
 
 
