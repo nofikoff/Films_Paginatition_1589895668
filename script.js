@@ -31,11 +31,14 @@
             console.log("*ACTION*");
             page++;
 
-            // let elChild = document.createElement('div');
-            // elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
-            // elChild.innerHTML =  makeAPIRequest;
-            // film.appendChild(elChild);
-            //film.innerHTML +=  "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+/*
+            let elChild = document.createElement('div');
+            elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+            film.appendChild(elChild);
+
+            film.innerHTML += "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+*/
+
 
             makeAPIRequest();
         }
@@ -118,7 +121,7 @@
                     let b = "";
                     console.log(out);
                     // for(let i = 0; i < out.Search.length; i++){
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < out.Search.length; i++) {
                         b = b + `
                          <div class = "book">
                          <img src = "${out.Search[i].Poster}">
@@ -132,10 +135,9 @@
                          `
                     }
 
-                    //film.innerHTML += b;
+                    //film.innerHTML += "<div>"+b+"</div>";
 
                     let elChild = document.createElement('div');
-                    //elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
                     elChild.innerHTML = b;
                     film.appendChild(elChild);
 
