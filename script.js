@@ -28,14 +28,16 @@
 
         console.log("*", document.documentElement.scrollTop, document.documentElement.clientHeight, document.documentElement.scrollHeight);
         if (document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-
+            console.log("*ACTION*");
             page++;
-            let elChild = document.createElement('div');
-            elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
-            film.appendChild(elChild);
 
+            // let elChild = document.createElement('div');
+            // elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+            // elChild.innerHTML =  makeAPIRequest;
+            // film.appendChild(elChild);
             //film.innerHTML +=  "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
 
+            makeAPIRequest();
         }
 
 
@@ -76,11 +78,6 @@
 
     function makeAPIRequest(event) {
 
-        console.log("********************** " + page);
-        console.log("********************** " + page);
-        console.log("********************** " + page);
-        console.log("********************** " + page);
-        console.log("********************** " + page);
 
         // try {
         //     page = this.attributes["data-id"].value
@@ -135,7 +132,14 @@
                          `
                     }
 
-                    film.innerHTML += b;
+                    //film.innerHTML += b;
+
+                    let elChild = document.createElement('div');
+                    //elChild.innerHTML = "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page + "<p>&nbsp; *** " + page;
+                    elChild.innerHTML = b;
+                    film.appendChild(elChild);
+
+
                     let userButton = document.getElementsByClassName('myBtn');
                     for (let i = 0; i < userButton.length; i++) {
                         (function (index) {
